@@ -5,8 +5,8 @@ import { Module } from '@nestjs/common';
 import { SongModule } from './songs/song.module';
 
 @Module({
-  imports: [SongModule],
+  imports: [SongModule, DatabaseModule],
   controllers: [AppController],
-  providers: [AppService, DatabaseModule],
+  providers: [AppService],
 })
 export class AppModule {}
