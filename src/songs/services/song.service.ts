@@ -1,5 +1,6 @@
 import { Injectable } from '@nestjs/common';
-import { SongDAO } from '../daos/song.dao';
+
+import { SongDAO } from '../typeorm/daos/song.dao';
 
 export type CreateParams = {
   name: string;
