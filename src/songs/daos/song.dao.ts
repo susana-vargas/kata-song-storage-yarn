@@ -1,9 +1,17 @@
+import { InjectRepository } from '@nestjs/typeorm';
+import { Repository } from 'typeorm';
 import { v4 as uuidv4 } from 'uuid';
 
 import { CreateParams } from '../services/song.service';
+import { SongEntity } from '../typeorm/entities/song-entity';
 
 export class SongDAO {
   private songs = [];
+
+  constructor(
+    @InjectRepository(SongEntity)
+    private userRepository: Repository<SongEntity>,
+  ) {}
 
   async findAll() {
     return this.songs;
